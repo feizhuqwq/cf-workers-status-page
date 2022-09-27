@@ -5,9 +5,9 @@ settings:
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
+  allmonitorsOperational: '所有系统运行'
+  notAllmonitorsOperational: '部分系统故障'
+  monitorLabelOperational: '故障'
   monitorLabelNotOperational: 'Not Operational'
   monitorLabelNoData: 'No data'
   dayInHistogramNoData: 'No data'
@@ -15,25 +15,47 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: c0-cdn-feizhu # unique identifier
+    name: c0-cdn.feizhuqwq.com
+    description: 'c0-cdn' # default=empty
+    url: 'https://c0-cdn.feizhuqwq.com/static/blog/js/sakura.js' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+  - id: i1-cdn-feizhu # unique identifier
+    name: i1-cdn.feizhuqwq.com
+    description: 'i1-cdn' # default=empty
+    url: 'https://i1-cdn.feizhuqwq.com/img01/1/1.jpg' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
-    method: GET
-    expectStatus: 200
+- id: blog-feizhu # unique identifier
+    name: blog.feizhuqwq.com
+    description: 'blog' # default=empty
+    url: 'https://blog.feizhuqwq.com/index.html' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+- id: www-feizhu # unique identifier
+    name: www.feizhuqwq.com
+    description: 'www' # default=empty
+    url: 'https://www.feizhuqwq.com/index.html' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+- id: pan-feizhu # unique identifier
+    name: pan.feizhuqwq.com
+    description: 'pan' # default=empty
+    url: 'https://pan.feizhuqwq.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
